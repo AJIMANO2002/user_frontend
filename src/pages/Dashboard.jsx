@@ -16,7 +16,7 @@ const Dashboard = () => {
       }
 
       try {
-        const res = await API.get("/auth/profile", {
+        const res = await API.get("api/auth/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(res.data);
