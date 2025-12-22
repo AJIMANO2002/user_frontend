@@ -21,7 +21,6 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // basic validation
     if (!form.name || !form.email || !form.password) {
       alert("Name, Email, and Password are required");
       return;
@@ -30,7 +29,7 @@ const Register = () => {
     try {
       await API.post("/auth/register", form);
       alert("Registered successfully");
-      navigate("/login"); // redirect to login
+      navigate("/login"); 
     } catch (err) {
       alert(err.response?.data?.message || "Something went wrong");
     }

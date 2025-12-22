@@ -7,14 +7,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <Routes>
-      {/* redirect root to login */}
       <Route path="/" element={<Navigate to="/login" replace />} />
-
-      {/* public routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* protected route */}
+     
       <Route
         path="/dashboard"
         element={

@@ -7,22 +7,19 @@ function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
-  // Update form fields
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Submit login
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await API.post("/auth/login", form);
 
-      // Save token & user to localStorage
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      // Navigate to dashboard
       navigate("/dashboard");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");

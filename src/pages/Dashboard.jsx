@@ -40,7 +40,6 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl p-6 sm:p-10">
-        {/* Header */}
         <div className="flex flex-col items-center mb-8">
           <div className="w-28 h-28 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-4xl font-bold mb-4">
             {user.name ? user.name.charAt(0) : "U"}
@@ -49,7 +48,6 @@ const Dashboard = () => {
           <p className="text-gray-500">{user.email}</p>
         </div>
 
-        {/* Profile Info Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           <div className="bg-blue-50 p-4 rounded-xl flex justify-between items-center hover:bg-blue-100 transition">
             <span className="font-medium text-blue-700">Age</span>
@@ -74,7 +72,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Logout Button */}
         <button
           onClick={() => {
             localStorage.removeItem("token");
